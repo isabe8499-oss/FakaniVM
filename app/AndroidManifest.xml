@@ -52,8 +52,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:exported="false" android:label="ROM 市场" android:name="a.p.a" android:windowSoftInputMode="adjustResize"/>
-        <activity android:exported="true" android:label="导入虚拟机" android:launchMode="singleTop" android:name="a.o.a" android:resizeableActivity="true" android:windowSoftInputMode="adjustResize">
+        <activity android:exported="false" android:label="@string/rom_market" android:name="a.p.a" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="true" android:label="@string/import_vm" android:launchMode="singleTop" android:name="a.o.a" android:resizeableActivity="true" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
