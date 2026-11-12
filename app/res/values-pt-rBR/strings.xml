@@ -112,4 +112,7 @@
     <string name="template_percent">%1$d%%</string>
     <string name="tooltip_description">dica</string>
     <string name="tooltip_label">mostrar dica</string>
+    <string name="rom_market">Mercado de ROMs</string>
+    <string name="import_vm">Importar máquina virtual</string>
+    <string name="app_name">FakaniVM</string>
 </resources>
