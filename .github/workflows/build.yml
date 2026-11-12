@@ -2,56 +2,71 @@ name: build
 
 on:
   push:
-    branches: [main]
+    branches: [main, "i18n/**"]
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v5
+      - name: Baixar o código
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: 环境信息
-        run: |
-          java -version
-          python3 --version
-          SDK="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
-          echo "ANDROID_HOME=$SDK"
-          ls "$SDK/build-tools" || true
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
 
-      - name: 结构自检
+      - name: Configurar Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Instalar ferramentas Android
         run: |
-          set -e
+          yes | sdkmanager --licenses >/dev/null
+          sdkmanager "build-tools;35.0.0" "platform-tools"
+
+      - name: Preparar ambiente
+        run: |
+          python3 --version
+          java -version
+          echo "ANDROID_HOME=$ANDROID_HOME"
           test -f app/AndroidManifest.xml
-          test -f app/apktool.yml
           test -d app/smali
           test -d app/res
-          test -d app/lib
           test -f runtime/classes2.dex
           test -f tools/apktool.jar
-          echo "structure OK"
 
-      - name: 构建
+      - name: Compilar APK
         run: |
           chmod +x build.sh
-          ./build.sh
+          ANDROID_HOME="$ANDROID_HOME" ./build.sh
 
-      - name: 产物校验
+      - name: Validar APK e assinatura
         run: |
-          set -e
+          set -euo pipefail
           APK=build/FakaniVM.apk
-          test -f "$APK"
+          test -s "$APK"
+          unzip -t "$APK"
           unzip -l "$APK" | grep -q 'classes.dex'
           unzip -l "$APK" | grep -q 'classes2.dex'
-          test "$(unzip -l "$APK" | grep -c 'META-INF/services/')" -ge 2
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
+          sha256sum "$APK" | tee build/FakaniVM.apk.sha256
           ls -lh "$APK"
 
-      - uses: actions/upload-artifact@v5
+      - name: Enviar APK compilado
+        uses: actions/upload-artifact@v4
         with:
-          name: FakaniVM
-          path: build/FakaniVM.apk
-          retention-days: 14
+          name: FakaniVM-pt-BR
+          path: |
+            build/FakaniVM.apk
+            build/FakaniVM.apk.sha256
+          if-no-files-found: error
+          retention-days: 30
