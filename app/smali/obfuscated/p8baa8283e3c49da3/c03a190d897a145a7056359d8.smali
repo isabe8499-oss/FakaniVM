@@ -2987,7 +2987,7 @@
     .line 804
     .line 805
     .line 806
-    const-string v0, " \u00b7 \u9996\u6b21\u542f\u52a8\u8f83\u6162\uff0c\u8bf7\u8010\u5fc3\u7b49\u5f85"
+    const-string v0, " · A primeira inicialização pode demorar mais. Aguarde."
 
     .line 807
     .line 808
