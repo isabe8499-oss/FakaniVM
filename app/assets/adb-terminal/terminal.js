@@ -15,7 +15,7 @@
   const fit = new FitAddon.FitAddon();
   term.loadAddon(fit);
   term.open(document.getElementById('terminal'));
-  term.textarea.setAttribute('aria-label', 'ADB 终端输入');
+  term.textarea.setAttribute('aria-label', 'Entrada do terminal ADB');
   term.textarea.setAttribute('autocapitalize', 'off');
   term.textarea.setAttribute('autocomplete', 'off');
   term.textarea.setAttribute('autocorrect', 'off');
@@ -419,7 +419,7 @@
       return lines.join('').trimEnd() + (enabled && mode === 'prompt' ? '\n' + promptText + line.join('') : '');
     }
   };
-  term.writeln('\x1b[1;34mAndVM · ADB 终端\x1b[0m');
-  term.writeln('\x1b[90m连接后输入 adb 命令 · 双指缩放字号\x1b[0m');
+  term.writeln('\x1b[1;34mAndVM · Terminal ADB\x1b[0m');
+  term.writeln('\x1b[90mDigite comandos ADB após conectar · Use dois dedos para ajustar o tamanho da fonte\x1b[0m');
   AndVmAdb.loaded();
 })();
