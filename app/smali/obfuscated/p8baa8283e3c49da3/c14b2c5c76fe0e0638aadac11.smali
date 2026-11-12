@@ -7096,7 +7096,7 @@
 
     .line 48
     .line 49
-    const-string v1, "\u5bfc\u5165\u5b8c\u6210\uff1a"
+    const-string v1, "Importação concluída: "
 
     .line 50
     .line 51
@@ -7110,7 +7110,7 @@
     .line 55
     .line 56
     .line 57
-    const-string p0, "\u3002"
+    const-string p0, "."
 
     .line 58
     .line 59
@@ -11427,7 +11427,7 @@
 
     .line 23
     .line 24
-    const-string v2, " \u4e2a"
+    const-string v2, " unidade(s)"
 
     .line 25
     .line 26
@@ -11447,7 +11447,7 @@
 
     .line 33
     .line 34
-    const-string v4, "\u5df2\u5b89\u88c5 "
+    const-string v4, "Instalado "
 
     .line 35
     .line 36
@@ -11512,7 +11512,7 @@
 
     .line 67
     .line 68
-    const-string v4, "\u5df2\u5199\u5165 Download "
+    const-string v4, "Salvo em Download "
 
     .line 69
     .line 70
@@ -11577,7 +11577,7 @@
 
     .line 101
     .line 102
-    const-string v4, "\u5f85\u4e0b\u6b21\u542f\u52a8\u5199\u5165 Download "
+    const-string v4, "Será salvo em Download na próxima inicialização "
 
     .line 103
     .line 104
@@ -11642,7 +11642,7 @@
 
     .line 135
     .line 136
-    const-string v4, "Guest \u540e\u53f0\u5904\u7406\u4e2d "
+    const-string v4, "Processando em segundo plano no ambiente convidado "
 
     .line 137
     .line 138
@@ -11707,7 +11707,7 @@
 
     .line 169
     .line 170
-    const-string v3, "\u5931\u8d25 "
+    const-string v3, "Falha "
 
     .line 171
     .line 172
@@ -12485,7 +12485,7 @@
 
     .line 128
     :cond_4
-    const-string p0, "\u3002"
+    const-string p0, "."
 
     .line 129
     .line 130
@@ -12502,7 +12502,7 @@
 
     .line 135
     .line 136
-    const-string v2, "\u5bfc\u5165\u5b8c\u6210\uff1a"
+    const-string v2, "Importação concluída: "
 
     .line 137
     .line 138

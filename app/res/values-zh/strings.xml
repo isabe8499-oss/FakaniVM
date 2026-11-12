@@ -7,4 +7,11 @@
     <string name="lnotice_dialog_btn_dont_agree">不同意</string>
     <string name="lnotice_dialog_btn_no_longer_prompt">不再显示</string>
     <string name="lnotice_dialog_btn_ok">确定</string>
+    <string name="l_lerinet_hint_no_network">Rede indisponível. Verifique sua conexão.</string>
+    <string name="lib_factory_a_web_menu_openinbrowser">Abrir no navegador</string>
+    <string name="lib_factory_a_web_menu_refresh">Atualizar</string>
+    <string name="lnotice_dialog_btn_agree">Concordo</string>
+    <string name="lnotice_dialog_btn_dont_agree">Não concordo</string>
+    <string name="lnotice_dialog_btn_no_longer_prompt">Não perguntar novamente</string>
+    <string name="lnotice_dialog_btn_ok">OK</string>
 </resources>

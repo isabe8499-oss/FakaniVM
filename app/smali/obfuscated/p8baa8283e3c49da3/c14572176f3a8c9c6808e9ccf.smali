@@ -7337,7 +7337,7 @@
 
     .line 164
     .line 165
-    const-string p3, "\u6682\u505c\u5931\u8d25\uff1a"
+    const-string p3, "Falha ao pausar: "
 
     .line 166
     .line 167

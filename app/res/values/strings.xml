@@ -112,4 +112,6 @@
     <string name="template_percent">%1$d percent.</string>
     <string name="tooltip_description">tooltip</string>
     <string name="tooltip_label">show tooltip</string>
+    <string name="rom_market">Mercado de ROMs</string>
+    <string name="import_vm">Importar máquina virtual</string>
 </resources>
